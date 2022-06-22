@@ -10,6 +10,10 @@ function App() {
   let [tasks, setTasks] = useState(() => {
     let oldTasks = JSON.parse(localStorage.getItem(localStorageKey));
     if (oldTasks) {
+      oldTasks = oldTasks.map((task) => {
+        task.edit = false;
+        return task;
+      });
       return oldTasks;
     }
     return [
@@ -102,7 +106,10 @@ function App() {
   let cancelUpdate = () => {
     if (temp.id != '') {
       tasks[temp.id].title = temp.title;
-      tasks[temp.id].edit = false;
+      tasks = tasks.map((task) => {
+        task.edit = false;
+        return task;
+      });
       setTasks([
         ...tasks,
       ])
