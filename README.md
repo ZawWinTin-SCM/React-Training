@@ -1,6 +1,6 @@
 # React Sample Project
 
-TODO Project using React.
+This is a task list project using React and Bootstrap.
 
 ## Installation
 ```
@@ -10,8 +10,6 @@ To start server,
 ```
 npm start
 ```
-
-You can check codes in [App.js](src/App.js).
 
 ## Preview
 
