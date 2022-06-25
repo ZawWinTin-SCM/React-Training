@@ -34,15 +34,18 @@ function ItemList(props) {
     }
 
     // Detect esc key in update
-    const escFunction = useCallback((event) => {
+    const escFunction = event => {
         if (event.keyCode === 27) {
             cancelUpdate();
         }
-    }, []);
+    };
 
     useEffect(() => {
         document.addEventListener('keydown', escFunction);
-    })
+        return () => {
+            document.removeEventListener('keydown', escFunction);
+        };
+    });
 
     return (
         <ul className="list-group list-group-flush task-list">
