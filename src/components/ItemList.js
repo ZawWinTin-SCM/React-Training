@@ -50,20 +50,24 @@ function ItemList(props) {
     return (
         <ul className="list-group list-group-flush task-list">
             {
-                tasks.map((task, index) => {
-                    return (
-                        <li key={index} className="list-group-item">
-                            <Item index={index}
-                                task={task}
-                                tasks={tasks}
-                                setTasks={setTasks}
-                                temp={temp}
-                                setTemp={setTemp}
-                                clearTemp={clearTemp}
-                                cancelUpdate={cancelUpdate} />
-                        </li>
-                    );
-                })
+                (tasks.length > 0) ?
+                    tasks.map((task, index) => {
+                        return (
+                            <li key={index} className="list-group-item">
+                                <Item index={index}
+                                    task={task}
+                                    tasks={tasks}
+                                    setTasks={setTasks}
+                                    temp={temp}
+                                    setTemp={setTemp}
+                                    clearTemp={clearTemp}
+                                    cancelUpdate={cancelUpdate} />
+                            </li>
+                        );
+                    }) :
+                    <li key="0" className="list-group-item">
+                        <span className="text-muted">There are no tasks.</span>
+                    </li>
             }
         </ul>
     );
