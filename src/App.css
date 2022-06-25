@@ -1,5 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
+  background-image: linear-gradient(to right, #fc5c7d, #6a82fb);
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .App-logo {
@@ -35,4 +46,38 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.task-container {
+  max-width: 750px;
+}
+
+.task-list {
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.task-list::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.task-list::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.task-list::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(45deg, #fc5c7d, #6a82fb);
+  border-radius: 10px;
+	box-shadow: rgba(0,0,0,.12) 0 3px 13px 1px;
+}
+
+.done {
+  text-decoration: line-through;
+  text-decoration-color: #6a82fb;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
